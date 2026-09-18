@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Inventory"
+  short_description: "Create safe, source-backed portfolio project content"
+  default_prompt: "Use $project-inventory to select and draft employer-facing project content for BenDewey.com."
