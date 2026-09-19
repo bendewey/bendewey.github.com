@@ -30,30 +30,22 @@
 else
 {
     <section class="protected-projects" aria-label="Protected project inventory">
-        <div class="protected-project">
-            <p class="eyebrow">Public sector · Product leadership</p>
-            <h2>State public housing department</h2>
-            <p>Ben served as Overall Product Owner and lead product person for a multi-year, multi-module transformation. He worked closely with UX and helped develop the backlog and roadmap across capital-project planning, financial submissions, rental-assistance reporting, and an AI-assisted utility-data submission workflow.</p>
-            <p class="project-role">ASP.NET · C# · SQL Server · Entity Framework · Azure · Azure Document Intelligence</p>
-        </div>
-        <div class="protected-project">
-            <p class="eyebrow">Legal services · Experience design</p>
-            <h2>Top NYC law firm</h2>
-            <p>As UX Design Lead and a design-thinking workshop facilitator, Ben shaped Power BI dashboard and client-intelligence portal concepts. The work concluded with a leadership presentation of the proposed implementation roadmap and product backlog; later implementation is not attributed here.</p>
-            <p class="project-role">UX leadership · Power BI · Workshops · Roadmap · Backlog</p>
-        </div>
-        <div class="protected-project">
-            <p class="eyebrow">Commercial real estate · Analytics</p>
-            <h2>Commercial real-estate reporting</h2>
-            <p>Ben designed the experience for a Power BI dashboard supporting accounting and reporting across property data, monthly rent, net operating income, and related measures. He facilitated design-thinking work and collaborated with the team responsible for the data model and warehouse.</p>
-            <p class="project-role">Power BI · Dashboard UX · Data modeling collaboration · Design thinking</p>
-        </div>
-        <div class="protected-project">
-            <p class="eyebrow">Nuology · Launched product</p>
-            <h2>Launched resale-inventory product</h2>
-            <p>ThriftTrack is a launched Nuology product for capturing, searching, editing, and organizing resale inventory on mobile and web. Its product context includes organization-scoped persistence, with mobile and web delivery supported by React Native and Supabase.</p>
-            <p class="project-role">Founder work · React Native · TypeScript · Supabase · Mobile · Web</p>
-        </div>
+        @foreach (var project in Model.Projects)
+        {
+            <div class="protected-project">
+                <p class="eyebrow">@project.Id · @project.Status</p>
+                <h2>@project.Title</h2>
+                <p>@project.Detail</p>
+                @if (!string.Equals(project.Role, "Unknown", StringComparison.OrdinalIgnoreCase))
+                {
+                    <p class="project-role">Role: @project.Role</p>
+                }
+                @if (project.Tags.Count > 0)
+                {
+                    <p class="project-role">@string.Join(" · ", project.Tags)</p>
+                }
+            </div>
+        }
     </section>
     <form method="post" asp-page-handler="Lock" class="lock-form"><button class="text-link" type="submit">Close protected inventory</button></form>
 }

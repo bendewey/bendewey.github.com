@@ -8,6 +8,7 @@ builder.Services.Configure<ContactEmailOptions>(builder.Configuration.GetSection
 builder.Services.AddTransient<IContactEmailSender, SmtpContactEmailSender>();
 builder.Services.Configure<ProjectInventoryOptions>(builder.Configuration.GetSection(ProjectInventoryOptions.SectionName));
 builder.Services.AddSingleton<IProjectInventoryAccess, ProjectInventoryAccess>();
+builder.Services.AddSingleton<IProjectCatalog, ProjectCatalog>();
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromHours(8);

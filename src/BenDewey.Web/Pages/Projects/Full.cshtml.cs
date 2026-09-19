@@ -1,10 +1,11 @@
+using BenDewey.Web.Models;
 using BenDewey.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BenDewey.Web.Pages.Projects;
 
-public sealed class FullModel(IProjectInventoryAccess access) : PageModel
+public sealed class FullModel(IProjectInventoryAccess access, IProjectCatalog catalog) : PageModel
 {
     private const string AccessKey = "ProjectInventoryAccess";
 
@@ -13,6 +14,7 @@ public sealed class FullModel(IProjectInventoryAccess access) : PageModel
 
     public bool HasAccess => HttpContext.Session.GetString(AccessKey) == "granted";
     public bool IsConfigured => access.IsConfigured;
+    public IReadOnlyList<PortfolioProject> Projects => catalog.All;
 
     public void OnGet()
     {

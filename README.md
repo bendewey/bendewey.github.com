@@ -65,3 +65,19 @@ have been tested.
 
 Do not commit credentials, exports containing production data, or details that
 are not authorized for sharing.
+
+## Refreshing the project inventory
+
+The deployed project pages read the generated
+`src/BenDewey.Web/Content/projects.json` file. Refresh it after updating the
+canonical job-search inventory:
+
+```bash
+./scripts/sync-project-inventory.sh
+```
+
+The script reads `/Users/bendewey/code/job-search/project-history` by default.
+It accepts an alternate project-history directory as its first argument. New
+records require an explicit anonymous entry in
+`Content/project-presentation-overrides.json`; generation fails rather than
+publishing raw project or client names.
