@@ -9,3 +9,6 @@
 
 # Local development secrets
 appsettings.Development.json
+
+# Default scaffold libraries are not used by this site.
+**/wwwroot/lib/
