@@ -6,6 +6,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.Configure<ContactEmailOptions>(builder.Configuration.GetSection(ContactEmailOptions.SectionName));
 builder.Services.AddTransient<IContactEmailSender, SmtpContactEmailSender>();
+builder.Services.Configure<ProjectInventoryOptions>(builder.Configuration.GetSection(ProjectInventoryOptions.SectionName));
+builder.Services.AddSingleton<IProjectInventoryAccess, ProjectInventoryAccess>();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromHours(8);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+    options.Cookie.Name = "BenDewey.ProjectInventory";
+    options.Cookie.SameSite = SameSiteMode.Lax;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+});
 
 var app = builder.Build();
 
@@ -20,6 +31,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 

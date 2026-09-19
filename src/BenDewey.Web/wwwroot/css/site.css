@@ -39,6 +39,21 @@ h3 { font-size:18px; letter-spacing:-.035em; margin:0; }
 .engagement-list li { border-bottom:1px solid var(--rule); display:grid; gap:4px; padding:14px 0; }
 .engagement-list strong { font-size:15px; }
 .engagement-list span { color:#536057; font-size:13px; }
+.project-grid { display:grid; gap:1px; grid-template-columns:repeat(2, 1fr); margin:50px 0; }
+.project-card { background:var(--quiet); min-height:270px; padding:32px; }
+.project-card h2, .inventory-callout h2, .protected-project h2 { font-size:30px; margin:16px 0; }
+.project-card p, .inventory-callout p, .protected-project p { font-size:16px; line-height:1.5; }
+.project-role { color:#536057; font-size:13px !important; font-weight:700; margin-top:26px; }
+.inventory-callout { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); max-width:760px; padding:48px 0; }
+.protected-intro { padding-bottom:38px; }
+.access-form { max-width:520px; padding:42px 0 60px; }
+.access-form form { display:grid; gap:16px; }
+.access-form label { display:grid; font-size:13px; font-weight:700; gap:7px; }
+.access-form input { background:#fff; border:1px solid var(--rule); font:inherit; padding:12px; }
+.protected-projects { display:grid; gap:0; grid-template-columns:repeat(2, 1fr); margin:30px 0; }
+.protected-project { border:1px solid var(--rule); margin:-1px 0 0 -1px; padding:32px; }
+.lock-form { margin-top:24px; }
+.lock-form button { background:none; border:0; color:var(--accent); cursor:pointer; padding:0; text-decoration:underline; }
 .contact-layout { display:grid; gap:56px; grid-template-columns:.7fr 1.3fr; padding:60px 0; }
 .contact-layout h1 { font-size:clamp(44px,5vw,66px); }
 .contact-layout p { font-size:18px; line-height:1.45; }
@@ -50,4 +65,4 @@ h3 { font-size:18px; letter-spacing:-.035em; margin:0; }
 .validation-summary-errors { color:#913d31; font-size:13px; }
 .success-message { background:var(--quiet); font-size:16px; line-height:1.45; margin-bottom:22px; padding:18px; }
 .honeypot { left:-10000px; position:absolute; }
-@media (max-width:700px) { .site-shell { padding:22px; } .site-header, .hero, .work, .meet, .work-item, .site-footer, .contact-layout { display:grid; grid-template-columns:1fr; } nav { margin-top:18px; } .site-header { padding-bottom:18px; } .hero { gap:32px; padding:54px 0; } .meet { padding:30px; } .contact-layout { gap:30px; padding:48px 0; } }
+@media (max-width:700px) { .site-shell { padding:22px; } .site-header, .hero, .work, .meet, .work-item, .site-footer, .contact-layout, .project-grid, .protected-projects { display:grid; grid-template-columns:1fr; } nav { margin-top:18px; } .site-header { padding-bottom:18px; } .hero { gap:32px; padding:54px 0; } .meet { padding:30px; } .contact-layout { gap:30px; padding:48px 0; } }
