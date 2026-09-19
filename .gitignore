@@ -1,0 +1,11 @@
+# .NET build output
+[Bb]in/
+[Oo]bj/
+
+# IDE and local user files
+.vs/
+*.user
+*.suo
+
+# Local development secrets
+appsettings.Development.json
