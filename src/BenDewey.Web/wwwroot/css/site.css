@@ -34,6 +34,11 @@ h3 { font-size:18px; letter-spacing:-.035em; margin:0; }
 .content-section h2 { font-size:32px; margin-bottom:18px; }
 .content-section p, .content-section li { font-size:16px; line-height:1.55; }
 .content-section ul { padding-left:20px; }
+.engagement-year { border-top:1px solid var(--rule); font-size:22px; margin:38px 0 0; padding-top:18px; }
+.engagement-list { list-style:none; margin:0; padding:0; }
+.engagement-list li { border-bottom:1px solid var(--rule); display:grid; gap:4px; padding:14px 0; }
+.engagement-list strong { font-size:15px; }
+.engagement-list span { color:#536057; font-size:13px; }
 .contact-layout { display:grid; gap:56px; grid-template-columns:.7fr 1.3fr; padding:60px 0; }
 .contact-layout h1 { font-size:clamp(44px,5vw,66px); }
 .contact-layout p { font-size:18px; line-height:1.45; }

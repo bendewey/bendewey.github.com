@@ -1,4 +1,5 @@
 @page
+@model WritingAndSpeakingModel
 @{
     ViewData["Title"] = "Writing and speaking";
 }
@@ -6,7 +7,7 @@
 <section class="page-intro">
     <p class="eyebrow">Writing &amp; speaking</p>
     <h1>Sharing the work behind the work.</h1>
-    <p>Ben has written technical books and spoken at conferences and community events about application development, user experience, and technology platforms. This material is a dated archive of a long-running contribution to the technical community.</p>
+    <p>Ben has written technical books and spoken at conferences and community events about application development, user experience, and technology platforms. This is a dated archive of that work, recovered from his legacy site.</p>
 </section>
 
 <section class="content-section">
@@ -18,7 +19,17 @@
     </ul>
 </section>
 
-<section class="content-section">
-    <h2>Talks and resources</h2>
-    <p>A curated list of conference sessions, community talks, legacy blog posts, slides, and resources will be added here. Older material will retain its original date and context rather than being presented as current platform guidance.</p>
+<section class="content-section" aria-labelledby="engagements-title">
+    <h2 id="engagements-title">Speaking engagements</h2>
+    <p>The legacy site recorded @Model.Engagements.Count engagements from 2009 through 2015. Session titles reflect the platform and language of their original date.</p>
+    @foreach (var year in Model.Engagements.GroupBy(engagement => engagement.Date.Year).OrderByDescending(group => group.Key))
+    {
+        <h3 class="engagement-year">@year.Key</h3>
+        <ul class="engagement-list">
+            @foreach (var engagement in year.OrderByDescending(item => item.Date))
+            {
+                <li><strong>@engagement.Title</strong><span>@engagement.Venue · @(engagement.DateLabel ?? engagement.Date.ToString("MMMM d, yyyy"))</span></li>
+            }
+        </ul>
+    }
 </section>

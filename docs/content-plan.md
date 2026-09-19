@@ -93,6 +93,12 @@ linked slides/code before making them available as downloads.
 | Old resumes | Replace with one current web/PDF resume; keep old files private unless needed. |
 | Historical subapps | Do not deploy by default; evaluate only as historical artifacts. |
 
+The legacy speaking page was recovered on September 19, 2026. It lists 65
+distinct engagements from 2009–2015. Its section labeled “2014” repeats 2015
+entries, so those duplicates are excluded from the archive. Preserve original
+titles, venues and dates; retain platform-specific language as historical
+context.
+
 ## Contact
 
 The site will offer a short contact form (name, email, company/role, and
