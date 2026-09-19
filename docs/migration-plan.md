@@ -4,6 +4,13 @@ The live site is the GearHost-hosted WordPress site. This repository was not
 its historical source. Do not alter or cancel GearHost while recovery is in
 progress.
 
+An additional public source is [bendewey.wordpress.com](https://bendewey.wordpress.com/),
+whose content Ben made available for this work on September 18, 2026. Its visible
+archive spans 2008–2010 and ends with a move announcement to BenDewey.com. Include
+it in the ledger alongside the later self-hosted site; do not treat it as a
+complete backup of GearHost. Preserve publication dates and source provenance,
+reconcile duplicates, and verify linked assets during migration.
+
 ## Recovery sequence
 
 1. Download GearHost site files through FTP and store a separate backup.

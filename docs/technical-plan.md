@@ -12,9 +12,19 @@ Service. It is server-rendered and dynamic where useful, but database-free:
 | Protected content files outside `wwwroot` | Richer, approved inventory data and private-safe assets. |
 | Azure App Service | Production runtime, custom domains, TLS and configuration. |
 | App Service settings | Shared password and session-signing secret. |
+| Transactional email provider | Delivers contact-form messages through credentials held in App Service settings. |
 | GitHub Actions | Build, test and deploy `main` to App Service. |
 
 No database, CMS, Function, separate API or client-side framework is required.
+The Razor Pages application handles the contact-form post and calls the email
+provider directly.
+
+## Contact form
+
+`/contact` accepts name, email, optional company/role and message. Server-side
+validation, a hidden honeypot field and rate limiting protect the endpoint.
+The recipient address, sender address and transactional-email provider
+credentials live in App Service settings. The public site never exposes them.
 
 ## Shared-password flow
 

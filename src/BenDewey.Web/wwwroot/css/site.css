@@ -1,0 +1,48 @@
+:root { --paper:#eff1e9; --ink:#1b211d; --accent:#35614b; --quiet:#dce4d5; --rule:#c4cdc1; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; margin:0; }
+a { color:inherit; }
+.site-shell { margin:auto; max-width:1180px; padding:24px 48px 60px; }
+.site-header { align-items:center; border-bottom:1px solid var(--rule); display:flex; justify-content:space-between; min-height:56px; }
+.site-name { font-size:20px; font-weight:700; letter-spacing:-.06em; line-height:1; text-decoration:none; }
+nav { align-items:center; display:flex; flex-wrap:wrap; gap:20px; font-size:12px; font-weight:700; }
+nav a { align-items:center; display:inline-flex; line-height:1; text-decoration:none; }
+.nav-contact { background:var(--ink); color:var(--paper); padding:9px 12px; }
+.hero { display:grid; gap:68px; grid-template-columns:1.1fr .9fr; padding:88px 0 70px; }
+.hero-copy { align-self:center; }
+.eyebrow { color:var(--accent); font-size:11px; font-weight:700; letter-spacing:.12em; margin:0; text-transform:uppercase; }
+h1, h2, h3, p { margin-top:0; }
+h1 { font-size:clamp(48px,6vw,82px); letter-spacing:-.075em; line-height:.92; margin:18px 0 28px; }
+h2 { font-size:clamp(32px,4vw,54px); letter-spacing:-.065em; line-height:.94; margin-bottom:32px; }
+h3 { font-size:18px; letter-spacing:-.035em; margin:0; }
+.intro { font-size:18px; line-height:1.4; max-width:540px; }
+.button { background:var(--accent); color:#fff; display:inline-block; font-size:13px; font-weight:700; margin-top:12px; padding:13px 17px; text-decoration:none; }
+.hero-image img { display:block; height:380px; object-fit:cover; object-position:center; width:100%; }
+.work { border-top:1px solid var(--rule); display:grid; gap:32px; grid-template-columns:.8fr 1.2fr; padding:25px 0 68px; }
+.work-item { border-top:1px solid var(--rule); display:grid; gap:20px; grid-template-columns:1.1fr .9fr; padding:18px 0; }
+.work-item:last-child { border-bottom:1px solid var(--rule); }
+.work-item p { font-size:13px; line-height:1.45; margin:0; }
+.meet { background:var(--quiet); display:grid; gap:30px; grid-template-columns:.75fr 1.25fr; padding:56px; }
+.meet p { font-size:17px; line-height:1.42; max-width:560px; }
+.text-link { font-size:13px; font-weight:700; }
+.site-footer { display:flex; font-size:12px; font-weight:700; justify-content:space-between; padding-top:28px; }
+.site-footer a { color:var(--accent); }
+.page-intro { border-bottom:1px solid var(--rule); max-width:760px; padding:80px 0 52px; }
+.page-intro p { font-size:19px; line-height:1.45; margin-bottom:0; }
+.content-section { border-bottom:1px solid var(--rule); max-width:760px; padding:48px 0; }
+.content-section h2 { font-size:32px; margin-bottom:18px; }
+.content-section p, .content-section li { font-size:16px; line-height:1.55; }
+.content-section ul { padding-left:20px; }
+.contact-layout { display:grid; gap:56px; grid-template-columns:.7fr 1.3fr; padding:60px 0; }
+.contact-layout h1 { font-size:clamp(44px,5vw,66px); }
+.contact-layout p { font-size:18px; line-height:1.45; }
+.contact-form { display:grid; gap:18px; }
+.contact-form label { display:grid; font-size:13px; font-weight:700; gap:7px; }
+.contact-form input, .contact-form textarea { background:#fff; border:1px solid var(--rule); border-radius:0; color:var(--ink); font:inherit; padding:12px; width:100%; }
+.contact-form textarea { min-height:150px; resize:vertical; }
+.contact-form .field-validation-error { color:#913d31; font-size:12px; }
+.validation-summary-errors { color:#913d31; font-size:13px; }
+.success-message { background:var(--quiet); font-size:16px; line-height:1.45; margin-bottom:22px; padding:18px; }
+.honeypot { left:-10000px; position:absolute; }
+@media (max-width:700px) { .site-shell { padding:22px; } .site-header, .hero, .work, .meet, .work-item, .site-footer, .contact-layout { display:grid; grid-template-columns:1fr; } nav { margin-top:18px; } .site-header { padding-bottom:18px; } .hero { gap:32px; padding:54px 0; } .meet { padding:30px; } .contact-layout { gap:30px; padding:48px 0; } }

@@ -1,14 +1,16 @@
-# Portfolio design concept
+# Approved portfolio design
 
-Open [portfolio-concept.html](portfolio-concept.html) locally for the working
-visual direction.
+The approved implementation baseline is
+[all-sans-portfolio-concept.html](all-sans-portfolio-concept.html). It replaces
+the earlier `portfolio-concept.html` exploration.
 
-The concept is deliberately all-sans: a cool-white content surface, midnight
-blue foundation and restrained electric-blue interaction accents. It is meant
-to feel editorial and product-led rather than corporate-template or
-developer-demo. The page hierarchy emphasizes the professional story, selected
-work and clarity for an employer audience.
+The visual system is all-sans, quiet sage, deep ink, and a restrained
+forest-green accent. It uses a clean Ben Dewey wordmark, sparse navigation,
+editorial type scale, and a wide stage hero image with room for the opening
+statement. It is intentionally distinct from Nuology’s electric-blue technical
+identity.
 
-Treat it as a direction for the Razor Pages implementation. Rebuild its
-patterns accessibly and responsively; do not copy its markup wholesale into the
-production application.
+Implement these patterns as accessible, responsive Razor Pages components;
+do not copy the prototype markup wholesale. The approved homepage sequence is
+the hero, selected work, Meet Ben, writing and speaking evidence, Nuology
+founder context, and contact.

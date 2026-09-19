@@ -1,0 +1,32 @@
+@page
+@model ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<section class="contact-layout">
+    <div>
+        <p class="eyebrow">Contact</p>
+        <h1>Let’s talk about the work ahead.</h1>
+        <p>For leadership opportunities or select advisory work, send a note and Ben will be in touch.</p>
+    </div>
+    <div>
+        @if (Model.Sent)
+        {
+            <p class="success-message" role="status">Thank you. Your message has been sent.</p>
+        }
+        <form class="contact-form" method="post">
+            <div asp-validation-summary="ModelOnly" role="alert"></div>
+            <label asp-for="Input.Name">Name <input asp-for="Input.Name" autocomplete="name" /></label>
+            <span asp-validation-for="Input.Name"></span>
+            <label asp-for="Input.Email">Email <input asp-for="Input.Email" autocomplete="email" /></label>
+            <span asp-validation-for="Input.Email"></span>
+            <label asp-for="Input.CompanyOrRole">Company or role <input asp-for="Input.CompanyOrRole" autocomplete="organization-title" /></label>
+            <span asp-validation-for="Input.CompanyOrRole"></span>
+            <label asp-for="Input.Message">Message <textarea asp-for="Input.Message"></textarea></label>
+            <span asp-validation-for="Input.Message"></span>
+            <label class="honeypot" aria-hidden="true" asp-for="Input.Website">Website <input asp-for="Input.Website" tabindex="-1" autocomplete="off" /></label>
+            <button class="button" type="submit">Send message</button>
+        </form>
+    </div>
+</section>
