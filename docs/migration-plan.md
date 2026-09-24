@@ -37,3 +37,12 @@ reconcile duplicates, and verify linked assets during migration.
 
 Never commit database exports, FTP credentials, WordPress secrets or unreviewed
 production content into this repository.
+
+## Mail cutover
+
+`ben@bendewey.com` is the recipient for website contact messages. Ben plans to
+move inbound mail to ImprovMX, as he did for Nuology, before shutting down
+GearHost. Verify the new MX and forwarding setup and test inbound mail before
+retiring GearHost. This is separate from the site's outbound Azure
+Communication Services SMTP configuration; do not change inbound mail DNS as
+part of deploying the contact form.
