@@ -26,6 +26,23 @@ validation, a hidden honeypot field and rate limiting protect the endpoint.
 The recipient address, sender address and transactional-email provider
 credentials live in App Service settings. The public site never exposes them.
 
+### Current outbound mail configuration (2026-09-24)
+
+The contact form sends through Azure Communication Services SMTP at
+`smtp.azurecomm.net:587` with TLS. The Email Communication resource is
+`bendewey-site-email`; its Azure-managed sender domain is linked to
+`bendewey-site-comm`. A dedicated Entra application, `bendewey-site-smtp`,
+authenticates SMTP under the scoped custom role `BenDewey Site SMTP Sender`.
+The recipient is `ben@bendewey.com`, and the sender uses the Azure-managed
+domain until Ben chooses to verify a custom sending domain.
+
+The SMTP client secret is stored only as `ContactEmail__Password` in the
+`bendewey-blog` App Service settings. It expires on 2027-09-24 and must be
+rotated before then. The other `ContactEmail__*` settings are also held in App
+Service. A live contact-form test returned a send confirmation on 2026-09-24;
+inbox receipt still needs confirmation from Ben. Inbound mail forwarding is a
+separate ImprovMX cutover recorded in the migration plan.
+
 ## Shared-password flow
 
 1. Anonymous routes render generic project names and descriptions only.
