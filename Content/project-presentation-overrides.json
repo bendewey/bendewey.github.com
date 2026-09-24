@@ -1,25 +1,116 @@
 {
-  "PRJ-001": { "title": "Launched resale-inventory product", "summary": "A launched product for inventory capture, organization, and search across mobile and web.", "detail": "Founder work on a launched resale-inventory product, with mobile and web delivery context.", "isFeatured": true },
-  "PRJ-002": { "title": "AI-assisted automotive repair product", "summary": "A product initiative exploring AI-assisted repair guidance across mobile and web.", "detail": "Founder product work in automotive repair guidance; status and personal responsibilities remain to be captured.", "isFeatured": false },
-  "PRJ-003": { "title": "Connected weather-status product", "summary": "A product initiative combining weather information, hardware, and cloud integration.", "detail": "Founder product work combining a status light, weather information, and cloud integration.", "isFeatured": false },
-  "PRJ-004": { "title": "Insurance-platform transformation", "summary": "Digital-delivery leadership for an insurance transformation spanning web, API, and mobile work.", "detail": "Overall Digital Delivery Lead for an insurance-platform transformation; the record identifies React, Jutro, Guidewire, APIs, React Native, and delivery leadership.", "isFeatured": false },
-  "PRJ-005": { "title": "State public housing department", "summary": "Overall product ownership for a multi-module public-sector housing transformation.", "detail": "Overall Product Owner and lead product person for capital planning, financial submissions, rental assistance, and AI-assisted utility-data submission work. The record identifies roadmap, backlog, UX collaboration, and Azure-based delivery.", "isFeatured": true },
-  "PRJ-006": { "title": "Entertainment bookings platform", "summary": "Technical leadership for a cloud-based bookings platform.", "detail": "Technical Lead for a bookings platform. The record identifies Angular, Node.js, Docker, Cosmos DB, AKS, and Azure; dates and outcomes remain to be captured.", "isFeatured": false },
-  "PRJ-007": { "title": "Applicant background-check portal", "summary": "Technical architecture and leadership for an applicant-facing portal.", "detail": "Overall Technical Architect and Technical Lead for a React portal supporting background-check intake.", "isFeatured": false },
-  "PRJ-008": { "title": "Product implementation engagement", "summary": "Design-thinking facilitation and product ownership for a full-stack implementation.", "detail": "Design Thinking Workshop Facilitator and Overall Product Owner for a product implementation using Angular and ASP.NET, with backlog and roadmap work.", "isFeatured": false },
-  "PRJ-009": { "title": "Government-service chatbot", "summary": "Conversation design and workshop facilitation for a government chatbot initiative.", "detail": "Conversation Designer and Design Thinking Workshop Facilitator for a government chatbot using BotSociety and Microsoft Bot Framework.", "isFeatured": false },
-  "PRJ-010": { "title": "Commercial real-estate reporting", "summary": "Experience design for a Power BI reporting dashboard and related data-warehouse work.", "detail": "UX Designer and Design Thinking Workshop Facilitator for a Power BI dashboard covering property, rent, and operating-income reporting, in collaboration with the data-modeling and warehouse team.", "isFeatured": true },
-  "PRJ-011": { "title": "Top NYC law firm", "summary": "UX leadership and design-thinking facilitation for reporting and client-intelligence concepts.", "detail": "UX Design Lead and Design Thinking Workshop Facilitator for Power BI dashboard and client-intelligence portal work, culminating in a leadership presentation of the proposed roadmap and backlog.", "isFeatured": true },
-  "PRJ-012": { "title": "Healthcare reporting dashboards", "summary": "UX architecture for hospital reporting dashboards and KPI analysis.", "detail": "UX Design Architect for healthcare reporting dashboards involving Power BI, hospital KPIs, star-schema data, and reporting.", "isFeatured": false },
-  "PRJ-013": { "title": "Digital product initiative", "summary": "An early-stage product initiative with details still being captured.", "detail": "A Nuology product initiative recorded for later fact capture. Its status, role, and delivery details remain unknown.", "isFeatured": false },
-  "PRJ-014": { "title": "Consumer web product initiative", "summary": "An early-stage web product initiative with details still being captured.", "detail": "A Nuology web product initiative recorded for later fact capture. Its status, role, and delivery details remain unknown.", "isFeatured": false },
-  "PRJ-015": { "title": "Design and commerce engagement", "summary": "A design-oriented engagement awaiting confirmation of its client relationship and delivery details.", "detail": "A Nuology engagement with an unresolved client or alias relationship. The website preserves it only as a generic design and commerce engagement until that relationship is confirmed.", "isFeatured": false },
-  "PRJ-016": { "title": "Windows Phone application", "summary": "A Windows Phone application from earlier founder work.", "detail": "An earlier Nuology Windows Phone application; role, dates, and outcome details remain to be captured.", "isFeatured": false },
-  "PRJ-017": { "title": "Rapid-delivery web application", "summary": "An Angular application delivered through an agile pod.", "detail": "An Angular application associated with rapid delivery through an agile pod. Specific role, dates, and outcome details remain to be captured.", "isFeatured": false },
-  "PRJ-018": { "title": "Accessible wayfinding product", "summary": "UX and development-roadmap work for an accessibility-focused mapping product.", "detail": "UX and development-roadmap work for a React product concerned with accessible sidewalks and wayfinding.", "isFeatured": false },
-  "PRJ-019": { "title": "Claims-processing applications", "summary": "Product ownership for insurance claims-processing applications.", "detail": "Product Owner work across claims-processing applications involving insurance rules and skill-based underwriting queues.", "isFeatured": false },
-  "PRJ-020": { "title": "Consumer portal transformation", "summary": "Technical leadership for a consumer-facing portal transformation.", "detail": "Technical Lead for a consumer portal transformation involving credit-report information, API integrations, and modernization work.", "isFeatured": false },
-  "PRJ-021": { "title": "Custom SharePoint portal", "summary": "A custom SharePoint portal engagement with additional details to capture.", "detail": "A custom SharePoint portal engagement. Role, dates, and outcome detail remain to be captured.", "isFeatured": false },
-  "PRJ-022": { "title": "Public-benefits UX and accessibility", "summary": "UX and accessibility analysis and implementation work for a public-benefits application.", "detail": "UX and accessibility analysis and implementation for a public-benefits application with regulatory-compliance considerations.", "isFeatured": false },
-  "PRJ-023": { "title": "Secure file-transfer modernization", "summary": "Architecture and product sponsorship for a file-transfer modernization initiative.", "detail": "Lead Architect and Product Sponsor for a SharePoint-based file-transfer modernization involving security and infrastructure concerns.", "isFeatured": false }
+  "PRJ-001": {
+    "title": "ThriftTrack",
+    "summary": "A launched resale-inventory app for capturing, organizing, and finding items on mobile and web.",
+    "detail": "Through Nuology, Ben founded ThriftTrack, a launched resale-inventory product with mobile and web experiences.",
+    "isFeatured": true
+  },
+  "PRJ-002": {
+    "title": "Automotive repair guidance product",
+    "summary": "An AI-assisted automotive repair product across mobile and web.",
+    "detail": "Nuology product work exploring AI-assisted automotive repair guidance across mobile and web.",
+    "isFeatured": false
+  },
+  "PRJ-003": {
+    "title": "Connected weather-status product",
+    "summary": "A product initiative combining weather information, hardware, and cloud integration.",
+    "detail": "Founder product work combining a status light, weather information, and cloud integration.",
+    "isFeatured": false
+  },
+  "PRJ-004": {
+    "title": "Insurance-platform transformation",
+    "summary": "Digital-delivery leadership for an insurance transformation spanning web, API, and mobile work.",
+    "detail": "Overall Digital Delivery Lead for an insurance-platform transformation; the record identifies React, Jutro, Guidewire, APIs, React Native, and delivery leadership.",
+    "isFeatured": false
+  },
+  "PRJ-005": {
+    "title": "Public-sector housing transformation",
+    "summary": "Product leadership for a multi-module housing platform covering planning, financial reporting, and rental assistance.",
+    "detail": "As overall Product Owner, Ben led product direction across capital planning, financial submissions, rental assistance, and utility-data submission. He worked with UX partners on the backlog and roadmap.",
+    "isFeatured": true
+  },
+  "PRJ-006": {
+    "title": "Entertainment bookings platform",
+    "summary": "Technical leadership for a cloud-based bookings platform.",
+    "detail": "Ben served as Technical Lead for a bookings platform using Angular, Node.js, Docker, Cosmos DB, AKS, and Azure.",
+    "isFeatured": false
+  },
+  "PRJ-007": {
+    "title": "Applicant background-check portal",
+    "summary": "Technical architecture and leadership for an applicant-facing portal.",
+    "detail": "Overall Technical Architect and Technical Lead for a React portal supporting background-check intake.",
+    "isFeatured": false
+  },
+  "PRJ-008": {
+    "title": "Product implementation engagement",
+    "summary": "Design-thinking facilitation and product ownership for a full-stack implementation.",
+    "detail": "Design Thinking Workshop Facilitator and Overall Product Owner for a product implementation using Angular and ASP.NET, with backlog and roadmap work.",
+    "isFeatured": false
+  },
+  "PRJ-009": {
+    "title": "Government-service chatbot",
+    "summary": "Conversation design and workshop facilitation for a government chatbot initiative.",
+    "detail": "Conversation Designer and Design Thinking Workshop Facilitator for a government chatbot using BotSociety and Microsoft Bot Framework.",
+    "isFeatured": false
+  },
+  "PRJ-010": {
+    "title": "Commercial real-estate reporting",
+    "summary": "Experience design for a Power BI reporting dashboard and related data-warehouse work.",
+    "detail": "UX Designer and Design Thinking Workshop Facilitator for a Power BI dashboard covering property, rent, and operating-income reporting, in collaboration with the data-modeling and warehouse team.",
+    "isFeatured": false
+  },
+  "PRJ-011": {
+    "title": "Legal-services analytics and client intelligence",
+    "summary": "Experience design and workshop leadership for Power BI reporting and a client-intelligence portal.",
+    "detail": "Ben led UX design and facilitated design-thinking workshops for dashboard and client-intelligence concepts. He presented a proposed roadmap and backlog to leadership for later implementation.",
+    "isFeatured": true
+  },
+  "PRJ-012": {
+    "title": "Healthcare reporting dashboards",
+    "summary": "UX architecture for hospital reporting dashboards and KPI analysis.",
+    "detail": "UX Design Architect for healthcare reporting dashboards involving Power BI, hospital KPIs, star-schema data, and reporting.",
+    "isFeatured": false
+  },
+  "PRJ-016": {
+    "title": "Windows Phone application",
+    "summary": "A mobile application from earlier Nuology work.",
+    "detail": "A Windows Phone application developed as part of Nuology’s earlier product work.",
+    "isFeatured": false
+  },
+  "PRJ-017": {
+    "title": "Rapid-delivery web application",
+    "summary": "An Angular application built by an agile delivery team.",
+    "detail": "An Angular application created through rapid delivery by an agile team.",
+    "isFeatured": false
+  },
+  "PRJ-018": {
+    "title": "Accessible wayfinding product",
+    "summary": "UX and development-roadmap work for an accessibility-focused mapping product.",
+    "detail": "UX and development-roadmap work for a React product concerned with accessible sidewalks and wayfinding.",
+    "isFeatured": false
+  },
+  "PRJ-019": {
+    "title": "Claims-processing applications",
+    "summary": "Product ownership for insurance claims-processing applications.",
+    "detail": "Product Owner work across claims-processing applications involving insurance rules and skill-based underwriting queues.",
+    "isFeatured": false
+  },
+  "PRJ-020": {
+    "title": "Consumer portal transformation",
+    "summary": "Technical leadership for a consumer-facing portal transformation.",
+    "detail": "Technical Lead for a consumer portal transformation involving credit-report information, API integrations, and modernization work.",
+    "isFeatured": false
+  },
+  "PRJ-022": {
+    "title": "Public-benefits UX and accessibility",
+    "summary": "UX and accessibility analysis and implementation work for a public-benefits application.",
+    "detail": "UX and accessibility analysis and implementation for a public-benefits application with regulatory-compliance considerations.",
+    "isFeatured": false
+  },
+  "PRJ-023": {
+    "title": "Secure file-transfer modernization",
+    "summary": "Architecture and product sponsorship for a file-transfer modernization initiative.",
+    "detail": "Lead Architect and Product Sponsor for a SharePoint-based file-transfer modernization involving security and infrastructure concerns.",
+    "isFeatured": false
+  }
 }

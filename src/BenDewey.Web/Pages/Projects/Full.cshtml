@@ -7,24 +7,17 @@
 <section class="page-intro protected-intro">
     <p class="eyebrow">Protected project inventory</p>
     <h1>Additional project context for approved reviewers.</h1>
-    <p>This convenience gate protects fuller career context. It does not include client names, credentials, proprietary workflows, or confidential outcomes.</p>
+    <p>Explore more of Ben’s product, design, and technology work.</p>
 </section>
 
 @if (!Model.HasAccess)
 {
     <section class="access-form">
-        @if (!Model.IsConfigured)
-        {
-            <p class="success-message" role="status">Access is being configured. Please contact Ben for the inventory link and password.</p>
-        }
-        else
-        {
-            <form method="post" asp-page-handler="Unlock">
-                <div asp-validation-summary="ModelOnly" role="alert"></div>
-                <label asp-for="Password">Inventory password <input asp-for="Password" autocomplete="current-password" /></label>
-                <button class="button" type="submit">Open inventory</button>
-            </form>
-        }
+        <form method="post" asp-page-handler="Unlock">
+            <div asp-validation-summary="ModelOnly" role="alert"></div>
+            <label asp-for="Password">Inventory password <input asp-for="Password" autocomplete="current-password" /></label>
+            <button class="button" type="submit">Open inventory</button>
+        </form>
     </section>
 }
 else
@@ -33,16 +26,11 @@ else
         @foreach (var project in Model.Projects)
         {
             <div class="protected-project">
-                <p class="eyebrow">@project.Id · @project.Status</p>
                 <h2>@project.Title</h2>
                 <p>@project.Detail</p>
-                @if (!string.Equals(project.Role, "Unknown", StringComparison.OrdinalIgnoreCase))
+                @if (!string.IsNullOrWhiteSpace(project.Role))
                 {
                     <p class="project-role">Role: @project.Role</p>
-                }
-                @if (project.Tags.Count > 0)
-                {
-                    <p class="project-role">@string.Join(" · ", project.Tags)</p>
                 }
             </div>
         }

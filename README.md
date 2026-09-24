@@ -77,7 +77,9 @@ canonical job-search inventory:
 ```
 
 The script reads `/Users/bendewey/code/job-search/project-history` by default.
-It accepts an alternate project-history directory as its first argument. New
-records require an explicit anonymous entry in
-`Content/project-presentation-overrides.json`; generation fails rather than
-publishing raw project or client names.
+It accepts an alternate project-history directory as its first argument. The
+generated catalog includes only records with a public-safe presentation entry
+in `Content/project-presentation-overrides.json`. New canonical records stay
+off the site until reviewed and added there. Three entries are marked as public
+featured work; the other curated entries appear only in the protected inventory
+when its password is configured.

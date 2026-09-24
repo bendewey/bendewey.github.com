@@ -12,6 +12,7 @@ var overrides = JsonSerializer.Deserialize<Dictionary<string, PresentationOverri
     ?? throw new InvalidOperationException("Presentation overrides could not be read.");
 
 var projects = Directory.EnumerateFiles(Path.Combine(source, "projects"), "prj-*.md")
+    .Where(path => overrides.ContainsKey(ProjectId(path)))
     .Select(path => ReadProject(path, overrides))
     .OrderBy(project => project.Id, StringComparer.Ordinal)
     .ToList();
@@ -22,7 +23,7 @@ File.WriteAllText(output, JsonSerializer.Serialize(projects, new JsonSerializerO
     WriteIndented = true
 }) + Environment.NewLine);
 
-Console.WriteLine($"Generated {projects.Count} anonymous portfolio records at {output}.");
+Console.WriteLine($"Generated {projects.Count} curated portfolio records at {output}.");
 
 static GeneratedProject ReadProject(string path, IReadOnlyDictionary<string, PresentationOverride> overrides)
 {
@@ -39,10 +40,18 @@ static GeneratedProject ReadProject(string path, IReadOnlyDictionary<string, Pre
     }
 
     var text = File.ReadAllText(path);
-    var status = ReadField(text, "Status");
-
+    var role = ReadField(text, "Ben's role");
     return new GeneratedProject(id, presentation.Title, presentation.Summary, presentation.Detail,
-        "Unknown", "Unknown", status, [], presentation.IsFeatured);
+        role.Contains("unknown", StringComparison.OrdinalIgnoreCase)
+            || role.Contains("not yet captured", StringComparison.OrdinalIgnoreCase)
+            || role.Contains("to confirm", StringComparison.OrdinalIgnoreCase) ? "" : role,
+        presentation.IsFeatured);
+}
+
+static string ProjectId(string path)
+{
+    var match = Regex.Match(Path.GetFileName(path), "^(PRJ-\\d+)", RegexOptions.IgnoreCase);
+    return match.Success ? match.Groups[1].Value.ToUpperInvariant() : "";
 }
 
 static string ReadField(string text, string field)
@@ -71,4 +80,4 @@ static string Require(IReadOnlyDictionary<string, string> arguments, string name
     arguments.TryGetValue(name, out var value) ? value : throw new ArgumentException($"Missing --{name}.");
 
 internal sealed record PresentationOverride(string Title, string Summary, string Detail, bool IsFeatured);
-internal sealed record GeneratedProject(string Id, string Title, string Summary, string Detail, string Role, string Dates, string Status, string[] Tags, bool IsFeatured);
+internal sealed record GeneratedProject(string Id, string Title, string Summary, string Detail, string Role, bool IsFeatured);

@@ -16,12 +16,15 @@ public sealed class FullModel(IProjectInventoryAccess access, IProjectCatalog ca
     public bool IsConfigured => access.IsConfigured;
     public IReadOnlyList<PortfolioProject> Projects => catalog.All;
 
-    public void OnGet()
-    {
-    }
+    public IActionResult OnGet() => IsConfigured ? Page() : NotFound();
 
     public IActionResult OnPostUnlock()
     {
+        if (!IsConfigured)
+        {
+            return NotFound();
+        }
+
         if (!access.IsValidPassword(Password))
         {
             ModelState.AddModelError(string.Empty, "That password did not match. Please try again.");
@@ -34,6 +37,11 @@ public sealed class FullModel(IProjectInventoryAccess access, IProjectCatalog ca
 
     public IActionResult OnPostLock()
     {
+        if (!IsConfigured)
+        {
+            return NotFound();
+        }
+
         HttpContext.Session.Remove(AccessKey);
         return RedirectToPage();
     }

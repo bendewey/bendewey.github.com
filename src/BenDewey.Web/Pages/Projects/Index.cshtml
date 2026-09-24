@@ -5,19 +5,18 @@
 }
 
 <section class="page-intro">
-    <p class="eyebrow">Project inventory</p>
+    <p class="eyebrow">Selected work</p>
     <h1>Leading complex product work from direction to delivery.</h1>
-    <p>This living inventory is generated from Ben’s canonical project history. These public summaries use generalized client labels and describe only work that is appropriate to share openly.</p>
+    <p>Three examples of product leadership, experience design, and founder work.</p>
 </section>
 
-<section class="project-grid" aria-label="Project inventory">
+<section class="project-grid" aria-label="Selected projects">
     @foreach (var project in Model.Projects)
     {
         <article class="project-card">
-            <p class="eyebrow">@project.Id</p>
             <h2>@project.Title</h2>
             <p>@project.Summary</p>
-            @if (!string.Equals(project.Role, "Unknown", StringComparison.OrdinalIgnoreCase))
+            @if (!string.IsNullOrWhiteSpace(project.Role))
             {
                 <p class="project-role">@project.Role</p>
             }
@@ -25,8 +24,11 @@
     }
 </section>
 
-<section class="inventory-callout">
-    <h2>Looking for fuller project context?</h2>
-    <p>Approved reviewers can access additional role, scope, and technology context. Client names and confidential information remain excluded.</p>
-    <a class="button" asp-page="/Projects/Full">Open protected inventory</a>
-</section>
+@if (Model.ShowProtectedInventory)
+{
+    <section class="inventory-callout">
+        <h2>Looking for fuller project context?</h2>
+        <p>Additional project context is available to reviewers with an access password.</p>
+        <a class="button" asp-page="/Projects/Full">Open protected inventory</a>
+    </section>
+}

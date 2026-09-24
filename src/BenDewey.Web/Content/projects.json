@@ -1,24 +1,18 @@
 [
   {
     "Id": "PRJ-001",
-    "Title": "Launched resale-inventory product",
-    "Summary": "A launched product for inventory capture, organization, and search across mobile and web.",
-    "Detail": "Founder work on a launched resale-inventory product, with mobile and web delivery context.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Title": "ThriftTrack",
+    "Summary": "A launched resale-inventory app for capturing, organizing, and finding items on mobile and web.",
+    "Detail": "Through Nuology, Ben founded ThriftTrack, a launched resale-inventory product with mobile and web experiences.",
+    "Role": "",
     "IsFeatured": true
   },
   {
     "Id": "PRJ-002",
-    "Title": "AI-assisted automotive repair product",
-    "Summary": "A product initiative exploring AI-assisted repair guidance across mobile and web.",
-    "Detail": "Founder product work in automotive repair guidance; status and personal responsibilities remain to be captured.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Title": "Automotive repair guidance product",
+    "Summary": "An AI-assisted automotive repair product across mobile and web.",
+    "Detail": "Nuology product work exploring AI-assisted automotive repair guidance across mobile and web.",
+    "Role": "",
     "IsFeatured": false
   },
   {
@@ -26,10 +20,7 @@
     "Title": "Connected weather-status product",
     "Summary": "A product initiative combining weather information, hardware, and cloud integration.",
     "Detail": "Founder product work combining a status light, weather information, and cloud integration.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "",
     "IsFeatured": false
   },
   {
@@ -37,32 +28,23 @@
     "Title": "Insurance-platform transformation",
     "Summary": "Digital-delivery leadership for an insurance transformation spanning web, API, and mobile work.",
     "Detail": "Overall Digital Delivery Lead for an insurance-platform transformation; the record identifies React, Jutro, Guidewire, APIs, React Native, and delivery leadership.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "Overall Digital Delivery Lead",
     "IsFeatured": false
   },
   {
     "Id": "PRJ-005",
-    "Title": "State public housing department",
-    "Summary": "Overall product ownership for a multi-module public-sector housing transformation.",
-    "Detail": "Overall Product Owner and lead product person for capital planning, financial submissions, rental assistance, and AI-assisted utility-data submission work. The record identifies roadmap, backlog, UX collaboration, and Azure-based delivery.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Title": "Public-sector housing transformation",
+    "Summary": "Product leadership for a multi-module housing platform covering planning, financial reporting, and rental assistance.",
+    "Detail": "As overall Product Owner, Ben led product direction across capital planning, financial submissions, rental assistance, and utility-data submission. He worked with UX partners on the backlog and roadmap.",
+    "Role": "Overall Product Owner and lead product person",
     "IsFeatured": true
   },
   {
     "Id": "PRJ-006",
     "Title": "Entertainment bookings platform",
     "Summary": "Technical leadership for a cloud-based bookings platform.",
-    "Detail": "Technical Lead for a bookings platform. The record identifies Angular, Node.js, Docker, Cosmos DB, AKS, and Azure; dates and outcomes remain to be captured.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Detail": "Ben served as Technical Lead for a bookings platform using Angular, Node.js, Docker, Cosmos DB, AKS, and Azure.",
+    "Role": "Technical Lead",
     "IsFeatured": false
   },
   {
@@ -70,10 +52,7 @@
     "Title": "Applicant background-check portal",
     "Summary": "Technical architecture and leadership for an applicant-facing portal.",
     "Detail": "Overall Technical Architect and Technical Lead for a React portal supporting background-check intake.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "Overall Technical Architect and Technical Lead",
     "IsFeatured": false
   },
   {
@@ -81,10 +60,7 @@
     "Title": "Product implementation engagement",
     "Summary": "Design-thinking facilitation and product ownership for a full-stack implementation.",
     "Detail": "Design Thinking Workshop Facilitator and Overall Product Owner for a product implementation using Angular and ASP.NET, with backlog and roadmap work.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "Design Thinking Workshop Facilitator and Overall Product Owner during inception",
     "IsFeatured": false
   },
   {
@@ -92,10 +68,7 @@
     "Title": "Government-service chatbot",
     "Summary": "Conversation design and workshop facilitation for a government chatbot initiative.",
     "Detail": "Conversation Designer and Design Thinking Workshop Facilitator for a government chatbot using BotSociety and Microsoft Bot Framework.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "Conversation Designer and Design Thinking Workshop Facilitator",
     "IsFeatured": false
   },
   {
@@ -103,21 +76,15 @@
     "Title": "Commercial real-estate reporting",
     "Summary": "Experience design for a Power BI reporting dashboard and related data-warehouse work.",
     "Detail": "UX Designer and Design Thinking Workshop Facilitator for a Power BI dashboard covering property, rent, and operating-income reporting, in collaboration with the data-modeling and warehouse team.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
-    "IsFeatured": true
+    "Role": "UX Designer for Power BI dashboard; Design Thinking Workshop Facilitator; collaborated with data-modeling and data-warehouse team",
+    "IsFeatured": false
   },
   {
     "Id": "PRJ-011",
-    "Title": "Top NYC law firm",
-    "Summary": "UX leadership and design-thinking facilitation for reporting and client-intelligence concepts.",
-    "Detail": "UX Design Lead and Design Thinking Workshop Facilitator for Power BI dashboard and client-intelligence portal work, culminating in a leadership presentation of the proposed roadmap and backlog.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Title": "Legal-services analytics and client intelligence",
+    "Summary": "Experience design and workshop leadership for Power BI reporting and a client-intelligence portal.",
+    "Detail": "Ben led UX design and facilitated design-thinking workshops for dashboard and client-intelligence concepts. He presented a proposed roadmap and backlog to leadership for later implementation.",
+    "Role": "UX Design Lead and Design Thinking Workshop Facilitator",
     "IsFeatured": true
   },
   {
@@ -125,65 +92,23 @@
     "Title": "Healthcare reporting dashboards",
     "Summary": "UX architecture for hospital reporting dashboards and KPI analysis.",
     "Detail": "UX Design Architect for healthcare reporting dashboards involving Power BI, hospital KPIs, star-schema data, and reporting.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
-    "IsFeatured": false
-  },
-  {
-    "Id": "PRJ-013",
-    "Title": "Digital product initiative",
-    "Summary": "An early-stage product initiative with details still being captured.",
-    "Detail": "A Nuology product initiative recorded for later fact capture. Its status, role, and delivery details remain unknown.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
-    "IsFeatured": false
-  },
-  {
-    "Id": "PRJ-014",
-    "Title": "Consumer web product initiative",
-    "Summary": "An early-stage web product initiative with details still being captured.",
-    "Detail": "A Nuology web product initiative recorded for later fact capture. Its status, role, and delivery details remain unknown.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
-    "IsFeatured": false
-  },
-  {
-    "Id": "PRJ-015",
-    "Title": "Design and commerce engagement",
-    "Summary": "A design-oriented engagement awaiting confirmation of its client relationship and delivery details.",
-    "Detail": "A Nuology engagement with an unresolved client or alias relationship. The website preserves it only as a generic design and commerce engagement until that relationship is confirmed.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "UX Design Architect",
     "IsFeatured": false
   },
   {
     "Id": "PRJ-016",
     "Title": "Windows Phone application",
-    "Summary": "A Windows Phone application from earlier founder work.",
-    "Detail": "An earlier Nuology Windows Phone application; role, dates, and outcome details remain to be captured.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Summary": "A mobile application from earlier Nuology work.",
+    "Detail": "A Windows Phone application developed as part of Nuology\u2019s earlier product work.",
+    "Role": "",
     "IsFeatured": false
   },
   {
     "Id": "PRJ-017",
     "Title": "Rapid-delivery web application",
-    "Summary": "An Angular application delivered through an agile pod.",
-    "Detail": "An Angular application associated with rapid delivery through an agile pod. Specific role, dates, and outcome details remain to be captured.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Summary": "An Angular application built by an agile delivery team.",
+    "Detail": "An Angular application created through rapid delivery by an agile team.",
+    "Role": "",
     "IsFeatured": false
   },
   {
@@ -191,10 +116,7 @@
     "Title": "Accessible wayfinding product",
     "Summary": "UX and development-roadmap work for an accessibility-focused mapping product.",
     "Detail": "UX and development-roadmap work for a React product concerned with accessible sidewalks and wayfinding.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "UX Researcher and User-Journey Facilitator",
     "IsFeatured": false
   },
   {
@@ -202,10 +124,7 @@
     "Title": "Claims-processing applications",
     "Summary": "Product ownership for insurance claims-processing applications.",
     "Detail": "Product Owner work across claims-processing applications involving insurance rules and skill-based underwriting queues.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "Product Owner for both applications",
     "IsFeatured": false
   },
   {
@@ -213,21 +132,7 @@
     "Title": "Consumer portal transformation",
     "Summary": "Technical leadership for a consumer-facing portal transformation.",
     "Detail": "Technical Lead for a consumer portal transformation involving credit-report information, API integrations, and modernization work.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
-    "IsFeatured": false
-  },
-  {
-    "Id": "PRJ-021",
-    "Title": "Custom SharePoint portal",
-    "Summary": "A custom SharePoint portal engagement with additional details to capture.",
-    "Detail": "A custom SharePoint portal engagement. Role, dates, and outcome detail remain to be captured.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "Technical Lead",
     "IsFeatured": false
   },
   {
@@ -235,10 +140,7 @@
     "Title": "Public-benefits UX and accessibility",
     "Summary": "UX and accessibility analysis and implementation work for a public-benefits application.",
     "Detail": "UX and accessibility analysis and implementation for a public-benefits application with regulatory-compliance considerations.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "UX and accessibility analysis; implementation",
     "IsFeatured": false
   },
   {
@@ -246,10 +148,7 @@
     "Title": "Secure file-transfer modernization",
     "Summary": "Architecture and product sponsorship for a file-transfer modernization initiative.",
     "Detail": "Lead Architect and Product Sponsor for a SharePoint-based file-transfer modernization involving security and infrastructure concerns.",
-    "Role": "Unknown",
-    "Dates": "Unknown",
-    "Status": "active",
-    "Tags": [],
+    "Role": "Lead Architect and Product Sponsor",
     "IsFeatured": false
   }
 ]
