@@ -13,7 +13,7 @@ Service. It is server-rendered and dynamic where useful, but database-free:
 | Azure App Service | Production runtime, custom domains, TLS and configuration. |
 | App Service settings | Shared password and session-signing secret. |
 | Transactional email provider | Delivers contact-form messages through credentials held in App Service settings. |
-| GitHub Actions | Build, test and deploy `main` to App Service. |
+| GitHub Actions | Build and deploy `master` to App Service. |
 
 No database, CMS, Function, separate API or client-side framework is required.
 The Razor Pages application handles the contact-form post and calls the email
@@ -60,15 +60,18 @@ make confidential material safe to distribute.
 
 ## Deployment and domain cutover
 
-1. Create the App Service and a GitHub deployment identity/secret.
-2. Deploy a staging build and test mobile behavior, accessibility, SEO, full
-   inventory sessions and redirects.
-3. Validate `bendewey.com` and `www.bendewey.com` through the DNS records
-   Azure requests.
-4. Enable managed HTTPS/TLS and verify both hostnames.
-5. Move production DNS only after migration-ledger and redirect tests pass.
-6. Keep GearHost untouched until the replacement and independent backups are
-   confirmed.
+The site runs as `bendewey-blog` on the Basic B1 `Default0` plan. The
+`.github/workflows/deploy.yml` workflow publishes .NET 10 on pushes to
+`master`. GitHub Actions authenticates through a dedicated Entra application
+with an OpenID Connect credential limited to this repository's `master` branch
+and Website Contributor permission scoped to this web app. The repository's
+three Azure IDs are GitHub Actions secrets; no publish profile is stored.
 
-Azure DNS is optional; retain the current DNS provider unless moving it makes
-apex-domain configuration or administration materially simpler.
+An Azure DNS zone for `bendewey.com` is staged with the App Service A record,
+direct `www` CNAME, both `asuid` verification TXT records, and the current
+GearHost MX record. GearHost still serves authoritative DNS. Before ending
+GearHost service, change registrar delegation to the Azure DNS nameservers,
+bind both hostnames to the web app, issue and bind Azure-managed certificates,
+verify HTTPS, and move inbound mail to ImprovMX. Azure DNS does not replace a
+domain registrar; the GearHost-resold registration must be transferred to a
+different registrar to end all GearHost billing.

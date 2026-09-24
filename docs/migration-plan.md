@@ -1,48 +1,43 @@
-# Legacy migration plan
+# GearHost exit and domain cutover
 
-The live site is the GearHost-hosted WordPress site. This repository was not
-its historical source. Do not alter or cancel GearHost while recovery is in
-progress.
+Ben approved moving the current site to Azure, retiring the GearHost WordPress
+site, and ending GearHost charges. The new portfolio does not depend on a
+WordPress content migration or a rollback copy.
 
-An additional public source is [bendewey.wordpress.com](https://bendewey.wordpress.com/),
-whose content Ben made available for this work on September 18, 2026. Its visible
-archive spans 2008–2010 and ends with a move announcement to BenDewey.com. Include
-it in the ledger alongside the later self-hosted site; do not treat it as a
-complete backup of GearHost. Preserve publication dates and source provenance,
-reconcile duplicates, and verify linked assets during migration.
+## Current dependencies
 
-## Recovery sequence
+- `bendewey.com` is registered through Tucows with GearHost as reseller;
+  registration expires on 2027-01-14. GearHost nameservers are delegated at the
+  registrar and serve the live website and mail records.
+- An Azure DNS zone for `bendewey.com` is staged in `Default-Web-EastUS`. Its
+  apex A record points to the `bendewey-blog` App Service inbound IP, `www`
+  points directly to its Azure hostname, and both `asuid` verification TXT
+  records are present.
+- The staged Azure zone temporarily preserves `mail2.gearhost.com` as the MX
+  destination. It must be changed when Ben's ImprovMX forwarding is active.
+- Outbound site contact mail already uses Azure Communication Services SMTP.
+  `ben@bendewey.com` is the recipient. Outbound SMTP and inbound forwarding
+  are separate services.
 
-1. Download GearHost site files through FTP and store a separate backup.
-2. Export the production MySQL database and store it separately from the code
-   repository.
-3. Inventory WordPress pages, posts, media, categories, tags and URLs from the
-   exports.
-4. Compare those exports with the retained historical snapshot at
-   `/Volumes/TOSHIBA EXT/Development/BenDewey.com` when available.
-5. Create a migration ledger for every discovered URL.
-6. Classify each item as migrate, archive, redirect or retire.
-7. Implement and test redirects before DNS cutover.
+## Remaining cutover work
 
-## Migration ledger fields
+1. Configure and verify ImprovMX forwarding for `ben@bendewey.com`.
+2. Change the staged Azure DNS MX records to ImprovMX and add its required SPF
+   record. Verify both against ImprovMX's domain setup instructions.
+3. Sign in to GearHost's registrar controls and delegate the domain to the four
+   nameservers assigned to the Azure DNS zone. Azure DNS is a DNS host, not a
+   domain registrar.
+4. Bind `bendewey.com` and `www.bendewey.com` to `bendewey-blog`, issue and bind
+   Azure-managed TLS certificates, and verify HTTPS and the redirect from
+   `www` to the apex domain.
+5. Move domain registration to a registrar outside GearHost so renewals no
+   longer bill through GearHost. This requires unlocking the domain and a
+   transfer authorization code from its current reseller.
+6. Destroy the old GearHost CloudSite, database, and mail service after the
+   website and ImprovMX are verified. GearHost's published account policy says
+   account cancellation requires an email to `help@gearhost.com` after all
+   services are removed and outstanding billing is resolved.
 
-| Field | Meaning |
-| --- | --- |
-| Legacy URL | Exact incoming path and hostname behavior. |
-| Title/type | Page, post, media, download or application. |
-| Disposition | Migrate, archive, redirect or retire. |
-| New destination | Target route or explicit archival location. |
-| Owner/approval | Who verified content and sharing suitability. |
-| Notes | Dates, risk, dependencies and asset handling. |
-
-Never commit database exports, FTP credentials, WordPress secrets or unreviewed
-production content into this repository.
-
-## Mail cutover
-
-`ben@bendewey.com` is the recipient for website contact messages. Ben plans to
-move inbound mail to ImprovMX, as he did for Nuology, before shutting down
-GearHost. Verify the new MX and forwarding setup and test inbound mail before
-retiring GearHost. This is separate from the site's outbound Azure
-Communication Services SMTP configuration; do not change inbound mail DNS as
-part of deploying the contact form.
+Do not cancel GearHost before the domain transfer and inbound mail are working;
+those services still depend on the account even though the replacement website
+is already live on Azure.

@@ -29,6 +29,18 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.Use(async (context, next) =>
+{
+    if (string.Equals(context.Request.Host.Host, "www.bendewey.com", StringComparison.OrdinalIgnoreCase))
+    {
+        context.Response.StatusCode = StatusCodes.Status308PermanentRedirect;
+        context.Response.Headers.Location = $"https://bendewey.com{context.Request.PathBase}{context.Request.Path}{context.Request.QueryString}";
+        return;
+    }
+
+    await next();
+});
+
 app.UseHttpsRedirection();
 
 app.UseRouting();

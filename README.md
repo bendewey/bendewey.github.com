@@ -1,14 +1,13 @@
 # BenDewey.com
 
-The future source repository for Ben Dewey's employer-facing portfolio at
-`bendewey.com`.
+Source for Ben Dewey's employer-facing portfolio. The current Azure site is
+`https://bendewey-blog.azurewebsites.net`; `bendewey.com` is being moved here.
 
-This repository is intentionally being modernized from its small legacy GitHub
-Pages starting point into a database-free ASP.NET Core Razor Pages application
-hosted on Azure App Service. It is not the historical source of the live
-GearHost WordPress site.
+The site is a database-free ASP.NET Core Razor Pages application on Azure App
+Service. This repository is not the historical source of the GearHost WordPress
+site.
 
-## What this site will do
+## Site content
 
 - Tell a current, employer-oriented story: product leadership, technology
   transformation and delivery across complex digital platforms.
@@ -18,10 +17,9 @@ GearHost WordPress site.
   non-confidential added detail.
 - Link to Nuology as Ben's founder/product work. Nuology.com remains the
   prospective-client destination; only ThriftTrack is confirmed launched.
-- Preserve useful legacy writing, talks and resources as a clearly dated
-  archive after the WordPress content is recovered.
+- Present selected legacy writing and speaking as a dated archive.
 
-## Planned technical direction
+## Hosting and deployment
 
 ASP.NET Core Razor Pages on Azure App Service:
 
@@ -30,11 +28,13 @@ ASP.NET Core Razor Pages on Azure App Service:
 - the Razor Pages app owns the shared-password session;
 - the password and session-signing secret live only in Azure App Service app
   settings, never in source control;
-- a GitHub Actions workflow will build, test and deploy `main`.
+- [GitHub Actions](.github/workflows/deploy.yml) builds and deploys `master`
+  automatically using Azure OpenID Connect; Ben will push the prepared local
+  commits when the cutover work is finished.
 
-The legacy [CNAME](CNAME) remains for now. It is not the production deployment
-plan; domain cutover happens only after the Azure site, HTTPS and redirects
-have been tested.
+Azure DNS has a staged `bendewey.com` zone. GearHost remains the registrar
+reseller and active DNS host until the domain's nameservers are changed. The
+App Service plan is Basic B1 because custom domains require a paid tier.
 
 ## Repository guide
 
@@ -43,25 +43,14 @@ have been tested.
   migration rules.
 - [Technical plan](docs/technical-plan.md) — application, access-control and
   deployment approach.
-- [Migration plan](docs/migration-plan.md) — how GearHost/WordPress becomes a
-  verified archive and redirect ledger.
+- [Migration plan](docs/migration-plan.md) — GearHost exit and inbound mail
+  transition notes.
 - [Project inventory integration](docs/project-inventory-integration.md) —
   source data and public/full presentation rules.
 - [Portfolio design concept](design/portfolio-concept.html) — open locally in
   a browser; this is a visual direction, not production code.
 - [Project inventory skill](.agents/skills/project-inventory/SKILL.md) —
   repository-local instructions for project-content work.
-
-## Before development starts
-
-1. Recover and independently back up the GearHost files and MySQL export.
-2. Produce the migration ledger: legacy URL, title, media, disposition and
-   redirect target.
-3. Confirm public contact channels and which project details are approved for
-   the shared-password view.
-4. Create the Razor Pages solution and representative content in this repo.
-5. Provision Azure App Service, configure deployment settings and test a
-   staging deployment before DNS cutover.
 
 Do not commit credentials, exports containing production data, or details that
 are not authorized for sharing.
