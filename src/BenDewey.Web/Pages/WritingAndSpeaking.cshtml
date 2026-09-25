@@ -1,13 +1,13 @@
 @page
 @model WritingAndSpeakingModel
 @{
-    ViewData["Title"] = "Writing and speaking";
+    ViewData["Title"] = "Books and past talks";
 }
 
 <section class="page-intro">
-    <p class="eyebrow">Writing &amp; speaking</p>
-    <h1>Sharing the work behind the work.</h1>
-    <p>Ben has written technical books and spoken at conferences and community events about application development, user experience, and technology platforms. This is a dated archive of that work, recovered from his legacy site.</p>
+    <p class="eyebrow">Earlier work</p>
+    <h1>Books and past talks.</h1>
+    <p>Before his focus shifted toward leading client projects, consulting practice growth, and team leadership, Ben wrote technical books and spoke at conferences and community events. The work below is preserved with its original dates as part of his career history.</p>
 </section>
 
 <section class="content-section">
@@ -20,16 +20,19 @@
 </section>
 
 <section class="content-section" aria-labelledby="engagements-title">
-    <h2 id="engagements-title">Speaking engagements</h2>
-    <p>The legacy site recorded @Model.Engagements.Count engagements from 2009 through 2015. Session titles reflect the platform and language of their original date.</p>
-    @foreach (var year in Model.Engagements.GroupBy(engagement => engagement.Date.Year).OrderByDescending(group => group.Key))
-    {
-        <h3 class="engagement-year">@year.Key</h3>
-        <ul class="engagement-list">
-            @foreach (var engagement in year.OrderByDescending(item => item.Date))
-            {
-                <li><strong>@engagement.Title</strong><span>@engagement.Venue · @(engagement.DateLabel ?? engagement.Date.ToString("MMMM d, yyyy"))</span></li>
-            }
-        </ul>
-    }
+    <h2 id="engagements-title">Past speaking engagements</h2>
+    <p>Browse @Model.Engagements.Count past engagements from 2009 through 2015. Session titles reflect the platforms and language of their time.</p>
+    <details class="engagement-archive">
+        <summary>View all @Model.Engagements.Count engagements</summary>
+        @foreach (var year in Model.Engagements.GroupBy(engagement => engagement.Date.Year).OrderByDescending(group => group.Key))
+        {
+            <h3 class="engagement-year">@year.Key</h3>
+            <ul class="engagement-list">
+                @foreach (var engagement in year.OrderByDescending(item => item.Date))
+                {
+                    <li><strong>@engagement.Title</strong><span>@engagement.Venue · @(engagement.DateLabel ?? engagement.Date.ToString("MMMM d, yyyy"))</span></li>
+                }
+            </ul>
+        }
+    </details>
 </section>
