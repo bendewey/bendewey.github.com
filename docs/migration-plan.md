@@ -8,13 +8,18 @@ WordPress content migration or a rollback copy.
 
 - `bendewey.com` is registered through Tucows with GearHost as reseller;
   registration expires on 2027-01-14. Its four registrar nameservers now point
-  to the Azure DNS zone in `Default-Web-EastUS`.
+  to the Azure DNS zone in `Default-Web-EastUS`. GearHost auto-renewal is off
+  while the registration transfer is arranged.
 - `bendewey.com` and `www.bendewey.com` are bound to `bendewey-blog` with
   Azure-managed TLS certificates. The apex serves the site over HTTPS and
   `www` redirects to the apex.
-- Azure DNS temporarily preserves `mail2.gearhost.com` as the MX destination
-  and `mail.bendewey.com` as a GearHost alias. Change both when ImprovMX
-  forwarding is active.
+- Azure DNS now routes inbound mail to ImprovMX (`mx1.improvmx.com` and
+  `mx2.improvmx.com`) and publishes its SPF record. The ImprovMX account
+  `bdewey01@hotmail.com` holds `bendewey.com`; both `ben@bendewey.com` and the
+  catch-all forward to that Hotmail inbox. ImprovMX reports the domain active
+  and accepted a test message for forwarding. Inbox receipt is still pending.
+- `mail.bendewey.com` still points to GearHost and can be removed after mail
+  delivery is confirmed.
 - Outbound site contact mail already uses Azure Communication Services SMTP.
   `ben@bendewey.com` is the recipient. Outbound SMTP and inbound forwarding
   are separate services.
@@ -25,19 +30,23 @@ WordPress content migration or a rollback copy.
   `nuology.com`. All three CloudSites are stopped. The
   `bendewey.com` mailboxes hold about 707.5 MB; Ben confirmed their historical
   messages already reached Hotmail and need no preservation.
+- `nuology.com` uses Cloudflare DNS and ImprovMX MX records. Its ImprovMX
+  domain, including the `ben` and catch-all aliases forwarding to
+  `nuology.ben@gmail.com`, moved to the new `nuology.ben@gmail.com` account on
+  2026-09-25. ImprovMX reports it active and accepted a test message. GearHost
+  auto-renewal is off while its registration transfer is arranged.
 
 ## Remaining GearHost exit work
 
-1. Configure and verify ImprovMX forwarding for `ben@bendewey.com`.
-2. Change the Azure DNS MX records to ImprovMX and add its required SPF
-   record. Verify inbound delivery before removing GearHost mail.
-3. Move domain registration to a registrar outside GearHost so renewals no
+1. Confirm receipt of the ImprovMX test messages in Hotmail and Gmail, then
+   remove the obsolete `mail.bendewey.com` GearHost alias and retire GearHost
+   mail service.
+2. Move domain registration to a registrar outside GearHost so renewals no
    longer bill through GearHost. This requires unlocking the domain and a
    transfer authorization code from its current reseller.
-4. Resolve the `nuology.com` registration separately. It also bills through
-   GearHost, and its future ownership and mail forwarding need a decision.
-5. Remove the retired GearHost CloudSites and databases, then the `bendewey`
-   mail service after inbound forwarding is verified. GearHost's published
+3. Move `nuology.com` registration outside GearHost as well while keeping its
+   Cloudflare DNS and ImprovMX forwarding.
+4. Remove the retired GearHost CloudSites and databases. GearHost's published
    account policy says account cancellation requires an email to
    `help@gearhost.com` after all services are removed and outstanding billing
    is resolved.
