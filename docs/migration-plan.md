@@ -33,19 +33,24 @@ WordPress content migration or a rollback copy.
 - `nuology.com` uses Cloudflare DNS and ImprovMX MX records. Its ImprovMX
   domain, including the `ben` and catch-all aliases forwarding to
   `nuology.ben@gmail.com`, moved to the new `nuology.ben@gmail.com` account on
-  2026-09-25. ImprovMX reports it active and accepted a test message. GearHost
-  auto-renewal is off while its registration transfer is arranged.
+  2026-09-25. ImprovMX reports it active, and Ben confirmed a test message
+  arrived. GearHost auto-renewal is off while its registration transfer is
+  arranged.
+- Ben selected GoDaddy as the destination registrar for both domains, since his
+  other domains are there. Registrar Lock was disabled for both on 2026-09-25;
+  GoDaddy confirms `bendewey.com` is unlocked. GearHost support ticket
+  `06C-3249751E-0007` requests the two EPP authorization codes and asks that
+  the Azure and Cloudflare nameservers stay unchanged. No transfer purchase has
+  been made.
 
 ## Remaining GearHost exit work
 
 1. Retire the old GearHost mail service after Ben confirms permanent deletion
-   of its stored mail. Confirm receipt of the Nuology alias test in Gmail.
-2. Move domain registration to a registrar outside GearHost so renewals no
-   longer bill through GearHost. This requires unlocking the domain and a
-   transfer authorization code from its current reseller.
-3. Move `nuology.com` registration outside GearHost as well while keeping its
-   Cloudflare DNS and ImprovMX forwarding.
-4. Remove the retired GearHost CloudSites and databases. GearHost's published
+   of its stored mail.
+2. Receive both EPP codes from GearHost, complete the GoDaddy transfer checkout,
+   approve any transfer emails, and verify the registrations have moved while
+   keeping the current Azure and Cloudflare nameservers.
+3. Remove the retired GearHost CloudSites and databases. GearHost's published
    account policy says account cancellation requires an email to
    `help@gearhost.com` after all services are removed and outstanding billing
    is resolved.
