@@ -1,7 +1,7 @@
 # BenDewey.com
 
-Source for Ben Dewey's employer-facing portfolio. The current Azure site is
-`https://bendewey-blog.azurewebsites.net`; `bendewey.com` is being moved here.
+Source for Ben Dewey's employer-facing portfolio, live at
+`https://bendewey.com` on Azure App Service.
 
 The site is a database-free ASP.NET Core Razor Pages application on Azure App
 Service. This repository is not the historical source of the GearHost WordPress
@@ -15,8 +15,8 @@ site.
   public-safe descriptions.
 - Offer a single shared-password full-inventory view with only approved,
   non-confidential added detail.
-- Link to Nuology as Ben's founder/product work. Nuology.com remains the
-  prospective-client destination; only ThriftTrack is confirmed launched.
+- Present Nuology as Ben's founder/product work. Only ThriftTrack is confirmed
+  launched.
 - Present selected legacy writing and speaking as a dated archive.
 
 ## Hosting and deployment
@@ -29,12 +29,12 @@ ASP.NET Core Razor Pages on Azure App Service:
 - the password and session-signing secret live only in Azure App Service app
   settings, never in source control;
 - [GitHub Actions](.github/workflows/deploy.yml) builds and deploys `master`
-  automatically using Azure OpenID Connect; Ben will push the prepared local
-  commits when the cutover work is finished.
+  automatically using Azure OpenID Connect.
 
-Azure DNS has a staged `bendewey.com` zone. GearHost remains the registrar
-reseller and active DNS host until the domain's nameservers are changed. The
-App Service plan is Basic B1 because custom domains require a paid tier.
+Azure DNS hosts `bendewey.com`; both the apex and `www` have Azure-managed TLS
+certificates. GearHost remains the registrar reseller and handles inbound mail
+until those services are moved. The App Service plan is Basic B1 because custom
+domains require a paid tier.
 
 ## Repository guide
 
