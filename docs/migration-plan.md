@@ -22,7 +22,7 @@ WordPress content migration or a rollback copy.
   remote workflow run completed successfully on 2026-09-25.
 - GearHost has three CloudSites (`bendewey`, `nuology`, `minimunchers`), three
   databases, and domain registrations for both `bendewey.com` and
-  `nuology.com`. `nuology` and `minimunchers` CloudSites are stopped. The
+  `nuology.com`. All three CloudSites are stopped. The
   `bendewey.com` mailboxes hold about 707.5 MB; Ben confirmed their historical
   messages already reached Hotmail and need no preservation.
 
