@@ -6,10 +6,9 @@ WordPress content migration or a rollback copy.
 
 ## Current state
 
-- `bendewey.com` is transferring from Tucows/GearHost to GoDaddy;
-  its pre-transfer registration expires on 2027-01-14. Its four registrar
-  nameservers point to the Azure DNS zone in `Default-Web-EastUS`. GearHost
-  auto-renewal is off.
+- `bendewey.com` transferred from Tucows/GearHost to GoDaddy on 2026-10-05.
+  GoDaddy lists it as active, with registration through 2028-01-14. Its four
+  nameservers still point to the Azure DNS zone in `Default-Web-EastUS`.
 - `bendewey.com` and `www.bendewey.com` are bound to `bendewey-blog` with
   Azure-managed TLS certificates. The apex serves the site over HTTPS and
   `www` redirects to the apex.
@@ -31,34 +30,38 @@ WordPress content migration or a rollback copy.
   fresh check before account closure. The `bendewey.com` mailboxes held about
   707.5 MB; Ben confirmed their historical messages already reached Hotmail
   and need no preservation.
-- `nuology.com` uses Cloudflare DNS and ImprovMX MX records. Its ImprovMX
-  domain, including the `ben` and catch-all aliases forwarding to
+- `nuology.com` transferred from Tucows/GearHost to GoDaddy on 2026-10-05.
+  GoDaddy lists it as active, with registration through 2028-03-17 and its
+  Cloudflare nameservers intact. It uses Cloudflare DNS and ImprovMX MX records.
+  Its ImprovMX domain, including the `ben` and catch-all aliases forwarding to
   `nuology.ben@gmail.com`, moved to the new `nuology.ben@gmail.com` account on
   2026-09-25. ImprovMX reports it active, and Ben confirmed a test message
-  arrived. GearHost auto-renewal is off while its registration transfer is
-  arranged.
+  arrived.
 - Ben selected GoDaddy as the destination registrar for both domains, since his
   other domains are there. Registrar Lock was disabled for both on 2026-09-25.
   GearHost supplied both EPP authorization codes by email. Ben completed the
   GoDaddy checkout on 2026-09-29 (confirmation `4192293468`): one-year
   transfers for both domains, $26.38 total including taxes and fees, with no
-  protection add-ons. GoDaddy's Transfers In page shows both **In progress**,
-  initiated 2026-09-29 and expected by 2026-10-06. Public DNS checks after
-  checkout still returned Azure nameservers for `bendewey.com`, Cloudflare
-  nameservers for `nuology.com`, and ImprovMX MX records for both.
+  protection add-ons. GoDaddy emailed confirmation for both domains on
+  2026-10-05. Its domain portfolio lists both as **Active**. A check of
+  GoDaddy's settings on 2026-10-05 showed Azure nameservers for `bendewey.com`
+  and Cloudflare nameservers for `nuology.com`. Browser checks loaded the
+  portfolio at `https://bendewey.com/` and confirmed
+  `https://www.bendewey.com/` redirects there. The nuology.com ImprovMX
+  dashboard still reports its forwarding domain **Active**. A new inbound
+  mail test after transfer has not yet been recorded.
 
 ## Remaining GearHost exit work
 
-1. Retire the old GearHost mail service after Ben confirms permanent deletion
-   of its stored mail.
-2. Watch the two GoDaddy incoming transfers, complete any email approvals if
-   requested, and verify both registrations move while keeping the current
-   Azure and Cloudflare nameservers.
+1. Send a fresh inbound test message to `ben@bendewey.com` and
+   `ben@nuology.com` and confirm both reach their intended inboxes after the
+   registrar transfer.
+2. Retire the old GearHost mail service. Ben previously confirmed its stored
+   mail needs no preservation because historical messages reached Hotmail.
 3. Inventory and remove any remaining retired GearHost CloudSites and
    databases. GearHost's published account policy says to request cancellation
    by emailing `help@gearhost.com` after removing all services and resolving
    outstanding billing.
 
-Do not cancel GearHost before domain registration and inbound mail are moved;
-those services still depend on the account even though the website is live on
-Azure.
+Both registrations have moved to GoDaddy. Complete the post-transfer mail
+check and GearHost inventory before requesting account cancellation.
