@@ -25,11 +25,11 @@ WordPress content migration or a rollback copy.
 - GitHub Actions deploys `master` to Azure using OpenID Connect. The first
   remote workflow run completed successfully on 2026-09-25.
 - GearHost originally had three stopped CloudSites (`bendewey`, `nuology`,
-  `minimunchers`) and three databases. Deletion of the `bendewey` CloudSite
-  was initiated on 2026-09-25; inventory of the remaining services needs a
-  fresh check before account closure. The `bendewey.com` mailboxes held about
-  707.5 MB; Ben confirmed their historical messages already reached Hotmail
-  and need no preservation.
+  `minimunchers`) and three databases. On 2026-10-05, the GearHost account
+  showed no remaining CloudSites, databases, or certificates. Billing showed
+  $0 currently due, $0 current-month usage, and a $0 monthly estimate. The
+  `bendewey.com` mailboxes had held about 707.5 MB; Ben confirmed their
+  historical messages already reached Hotmail and needed no preservation.
 - `nuology.com` transferred from Tucows/GearHost to GoDaddy on 2026-10-05.
   GoDaddy lists it as active, with registration through 2028-03-17 and its
   Cloudflare nameservers intact. It uses Cloudflare DNS and ImprovMX MX records.
@@ -50,18 +50,16 @@ WordPress content migration or a rollback copy.
   `https://www.bendewey.com/` redirects there. The nuology.com ImprovMX
   dashboard still reports its forwarding domain **Active**. A new inbound
   mail test after transfer has not yet been recorded.
+- Ben approved GearHost account closure on 2026-10-05. The account's
+  self-service **Deactivate My Account** flow completed and displayed
+  **Account Deactivated**. The GearHost Domains page had still listed
+  `nuology.com` as active immediately before deactivation, despite GoDaddy
+  listing it as active in Ben's new registrar portfolio; its GearHost
+  auto-renewal was off. The Ben Dewey site still loaded over HTTPS after
+  deactivation.
 
-## Remaining GearHost exit work
+## Remaining check
 
-1. Send a fresh inbound test message to `ben@bendewey.com` and
-   `ben@nuology.com` and confirm both reach their intended inboxes after the
-   registrar transfer.
-2. Retire the old GearHost mail service. Ben previously confirmed its stored
-   mail needs no preservation because historical messages reached Hotmail.
-3. Inventory and remove any remaining retired GearHost CloudSites and
-   databases. GearHost's published account policy says to request cancellation
-   by emailing `help@gearhost.com` after removing all services and resolving
-   outstanding billing.
-
-Both registrations have moved to GoDaddy. Complete the post-transfer mail
-check and GearHost inventory before requesting account cancellation.
+Send fresh inbound test messages to `ben@bendewey.com` and
+`ben@nuology.com` and confirm both reach their intended inboxes after the
+registrar transfer and GearHost deactivation.
